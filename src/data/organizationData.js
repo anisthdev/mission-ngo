@@ -124,48 +124,109 @@ export const organizationInfo = {
   // Board Members
   board: [
     {
+      name: "Sri Byomojyoti Biswal",
       designation: "President",
-      name: "Sh. Byomojyoti Biswal",
-      role: "Strategic direction, policy approvals",
-      occupation: "Advocate"
+      expertise: "Law"
     },
     {
-      designation: "Vice President",
-      name: "Smt. S.S. Laxmi",
-      role: "Assisting President",
-      occupation: "Social Activist"
-    },
-    {
-      designation: "Secretary",
       name: "Dr. Prabodha Kumar Moharana",
-      role: "Program leadership, administration",
-      occupation: "Social Activist"
+      designation: "Secretary",
+      expertise: "Social"
     },
     {
+      name: "Smt Punyaprava Mohanty",
+      designation: "Vice-President",
+      expertise: "Micro finance and mobilization"
+    },
+    {
+      name: "Smt Ankita Sahoo",
       designation: "Treasurer",
-      name: "Miss Sagarika Mohanty",
-      role: "Financial oversight, donor compliance",
-      occupation: "Social Activist"
+      expertise: "Accounts"
     },
     {
+      name: "Smt Sudipti Sahoo",
       designation: "Executive Member",
-      name: "Sh. Swadesha Ranjan Mohapatra",
-      role: "Programmatic review & local governance",
-      occupation: "Self-Employed"
+      expertise: "Education"
     },
     {
+      name: "Sri Jeeban Prakash Das",
       designation: "Executive Member",
-      name: "Sh. Jiban Prakash Das",
-      role: "Programmatic review & local governance",
-      occupation: "Self-Employed"
+      expertise: "IT & ITES"
     },
     {
+      name: "Sri Swadesh Ranjan Mohapatra",
       designation: "Executive Member",
-      name: "Smt. Sudipti Sahu",
-      role: "Programmatic review & local governance",
-      occupation: "Social Activist"
+      expertise: "Engineering"
     }
   ],
+
+  // Donor & Supporting Agencies
+  donors: [
+    "CAPART",
+    "CED, Dept of PR&DW, Govt. of Odisha",
+    "Central Social Welfare Board, Govt. of India",
+    "CSC e-Governance Services India Ltd",
+    "DC, Handicrafts, Govt. of India",
+    "Dept. of Health & Family Welfare, Govt. of Odisha",
+    "Dept. of SC, ST OBC welfare, Govt. of Odisha",
+    "Director of Handicrafts, Govt. of Odisha",
+    "Director of Industries, Govt. of Odisha",
+    "Eco Metrix",
+    "ESDL",
+    "H&UD Department, Govt. of Odisha",
+    "HfHI",
+    "KVIB, Govt. of Odisha",
+    "KVIC, Govt. of India",
+    "Larus",
+    "Ministry of AYUSH, Govt. of India",
+    "Ministry of Forest & Environment, Govt. of India",
+    "Ministry of MSME, Govt. of India",
+    "Ministry of Youth Affairs & Sports, Govt. of India",
+    "NABARD",
+    "NABCONS",
+    "National Health Mission, Govt. of Odisha",
+    "NIN, Pune, Govt. of India",
+    "OCAC, Department of IT, Govt. of Odisha",
+    "Odisha Livelihood Mission",
+    "OKCL",
+    "OSFDC, Govt. of Odisha",
+    "PRIVE",
+    "RBI",
+    "RWSS, Dhenkanal, Govt. of Odisha",
+    "SIRD, Panchayat Raj Department, Govt. of Odisha",
+    "UMC, Ahmedabad",
+    "Trident Academy of Management",
+    "L & K Services Pvt Ltd",
+    "Edu Jobs Academy Pvt Ltd"
+  ],
+
+  // Bank Account Details
+  bankDetails: {
+    govtGrants: {
+      accountHolder: "MISSION",
+      bankName: "Indian Bank",
+      branch: "Dhenkanal",
+      ifsc: "IDIB000D627",
+      accountNumber: "514321523",
+      note: "Funds accepted through Cheque/DD/NEFT/RTGS only"
+    },
+    individualDonations: {
+      accountHolder: "MISSION (Admin Fund)",
+      bankName: "Indian Bank",
+      branch: "Dhenkanal",
+      ifsc: "IDIB000D627",
+      accountNumber: "6477627140",
+      note: "Funds accepted through NEFT/RTGS/QR Code only"
+    },
+    csrGrants: {
+      accountHolder: "MISSION",
+      bankName: "Union Bank of India",
+      branch: "Dhenkanal",
+      ifsc: "UBIN0919799",
+      accountNumber: "128810100000159",
+      note: "Funds accepted through Cheque/DD/NEFT/RTGS only"
+    }
+  },
 
   // Team Structure
   teamStructure: {
@@ -234,5 +295,89 @@ export const milestones = [
     period: "2017-2023",
     title: "Transformative Growth",
     description: "Expanded operations to 18 districts, benefiting 165,000 families."
+  }
+];
+
+export const programmeTimeline = [
+  {
+    phase: "Phase I",
+    title: "Foundation & Social Awareness",
+    period: "2006–2008",
+    description: "MISSION began its journey with a strong focus on education, sanitation, environment, and social awareness.",
+    highlights: [
+      "Condensed Course Education – CSWB, Govt. of India",
+      "National Environment Awareness Campaign – MoEF, Govt. of India",
+      "Total Sanitation Campaign – Govt. of Odisha",
+      "Creche support for working women",
+      "Yoga & Naturopathy awareness programmes",
+      "Vocational training and promotion of cottage industries",
+      "Awareness on SC/ST rights and social inclusion"
+    ]
+  },
+  {
+    phase: "Phase II",
+    title: "Skill & Entrepreneurship Expansion",
+    period: "2009–2012",
+    description: "Expanding vocational horizons and fostering the spirit of rural entrepreneurship among youth.",
+    highlights: [
+      "Diversified vocational training trades",
+      "Launch of rural entrepreneurship incubation",
+      "Partnerships with state skill missions"
+    ]
+  },
+  {
+    phase: "Phase III",
+    title: "Livelihoods & Urban Poverty Alleviation",
+    period: "2013–2016",
+    description: "A strategic shift towards sustainable livelihoods and addressing urban poverty challenges.",
+    highlights: [
+      "Implementation of SJSRY and NULM projects",
+      "Focus on urban livelihood centers",
+      "Development of community-based micro-plans"
+    ]
+  },
+  {
+    phase: "Phase IV",
+    title: "Community Institutions & Sanitation",
+    period: "2017–2019",
+    description: "Strengthening the grassroots foundation through SHG federations and sanitation movements.",
+    highlights: [
+      "Massive mobilization for Swachh Bharat Mission",
+      "Formation of cluster-level SHG federations",
+      "Community-led total sanitation initiatives"
+    ]
+  },
+  {
+    phase: "Phase V",
+    title: "Agriculture, FPOs & Enterprise Clusters",
+    period: "2020–2022",
+    description: "Organizing small farmers into powerful collectives and developing value-chain clusters.",
+    highlights: [
+      "Promotion of NABARD-supported FPOs",
+      "Development of specialized agri-clusters",
+      "Promotion of organic farming practices"
+    ]
+  },
+  {
+    phase: "Phase VI",
+    title: "Cluster Development & Technology Integration",
+    period: "2023–2024",
+    description: "Modernizing rural production through technology and advanced cluster development strategies.",
+    highlights: [
+      "IoT-based agriculture pilot projects",
+      "Onboarding rural products to ONDC and digital platforms",
+      "Establishment of Common Facility Centers (CFCs)"
+    ]
+  },
+  {
+    phase: "Phase VII",
+    title: "Current & Ongoing Programmes",
+    period: "2024–2026",
+    description: "Expanding impact and driving sustainable, technology-led development action for the new decade.",
+    highlights: [
+      "Implementation of PM Vishwakarma and LEDP",
+      "Expansion to 18 districts across Odisha",
+      "Focus on high-value enterprise development"
+    ]
   }
 ];

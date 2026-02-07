@@ -4,7 +4,7 @@ export const thematicAreas = [
   {
     id: 1,
     title: "Livelihood & Enterprise Development",
-    icon: "💼",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800",
     description: "We support rural households to enhance income and economic resilience through a comprehensive approach of skill development and market-led interventions.",
     approach: [
       "Skill development and entrepreneurship training",
@@ -17,7 +17,7 @@ export const thematicAreas = [
   {
     id: 2,
     title: "Traditional Artisan Empowerment",
-    icon: "🎨",
+    image: "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=800",
     description: "Traditional artisans often lack branding and market visibility. We bridge this gap through design and market support.",
     approach: [
       "Product design and quality improvement",
@@ -30,7 +30,7 @@ export const thematicAreas = [
   {
     id: 3,
     title: "Skill Development",
-    icon: "🎓",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800",
     description: "Youth unemployment remains a key challenge. Our initiatives focus on preparing youth for the modern economy.",
     approach: [
       "Life skills and employability training",
@@ -43,7 +43,7 @@ export const thematicAreas = [
   {
     id: 4,
     title: "Institutional Strengthening",
-    icon: "🏛️",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800",
     description: "Strong institutions are key to sustainable development. We build the capacity of community-led organizations.",
     approach: [
       "SHG and community institution capacity building",
@@ -56,7 +56,7 @@ export const thematicAreas = [
   {
     id: 5,
     title: "Health Awareness",
-    icon: "⚕️",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
     description: "Preventive health awareness is critical for community well-being and long-term prosperity.",
     approach: [
       "Nutrition, sanitation, and hygiene campaigns",
