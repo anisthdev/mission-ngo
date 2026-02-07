@@ -6,6 +6,29 @@ const ImpactCounter = ({ end, duration = 2000, suffix = "", prefix = "" }) => {
   const counterRef = useRef(null);
 
   useEffect(() => {
+    const animateCount = () => {
+      const startTime = Date.now();
+      const endValue = typeof end === 'string' ? parseInt(end.replace(/[^0-9]/g, '')) : end;
+
+      const updateCount = () => {
+        const now = Date.now();
+        const progress = Math.min((now - startTime) / duration, 1);
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const currentCount = Math.floor(easeOutQuart * endValue);
+
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          setCount(endValue);
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    const currentRef = counterRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
@@ -16,38 +39,16 @@ const ImpactCounter = ({ end, duration = 2000, suffix = "", prefix = "" }) => {
       { threshold: 0.1 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [hasAnimated]);
-
-  const animateCount = () => {
-    const startTime = Date.now();
-    const endValue = typeof end === 'string' ? parseInt(end.replace(/[^0-9]/g, '')) : end;
-
-    const updateCount = () => {
-      const now = Date.now();
-      const progress = Math.min((now - startTime) / duration, 1);
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(easeOutQuart * endValue);
-
-      setCount(currentCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCount);
-      } else {
-        setCount(endValue);
-      }
-    };
-
-    requestAnimationFrame(updateCount);
-  };
+  }, [hasAnimated, end, duration]);
 
   const formatNumber = (num) => {
     return num.toLocaleString('en-IN');

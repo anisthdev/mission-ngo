@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
 // Program Card Component
-export const ProgramCard = ({ title, icon, description, targetGroups, link }) => {
+export const ProgramCard = ({ title, icon, description, targetGroups, approach, outcome, link }) => {
   return (
     <div className="card group">
       <div className="p-6">
@@ -10,11 +10,35 @@ export const ProgramCard = ({ title, icon, description, targetGroups, link }) =>
         <h3 className="text-xl font-heading font-semibold text-gray-900 mb-3">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-3">{description}</p>
-        <div className="mb-4">
-          <span className="text-xs font-semibold text-secondary">Target Groups:</span>
-          <p className="text-xs text-gray-500 mt-1">{targetGroups}</p>
-        </div>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
+
+        {approach && approach.length > 0 && (
+          <div className="mb-4">
+            <span className="text-xs font-semibold text-primary uppercase tracking-wider">Our Approach:</span>
+            <ul className="mt-2 space-y-1">
+              {approach.map((item, index) => (
+                <li key={index} className="text-xs text-gray-600 flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {outcome && (
+          <div className="mb-4 p-3 bg-accent/5 rounded-lg border-l-2 border-accent">
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Outcome:</span>
+            <p className="text-xs text-gray-700 mt-1 italic">{outcome}</p>
+          </div>
+        )}
+
+        {targetGroups && (
+          <div className="mb-4">
+            <span className="text-xs font-semibold text-secondary uppercase tracking-wider">Target Groups:</span>
+            <p className="text-xs text-gray-500 mt-1">{targetGroups}</p>
+          </div>
+        )}
         {link && (
           <Link
             to={link}

@@ -9,42 +9,23 @@ import { FaHandHoldingHeart, FaUsers, FaLightbulb, FaHandshake } from 'react-ico
 const Home = () => {
   // Impact Statistics for Counter
   const impactStatistics = [
-    { value: 168015, label: "Individuals Reached", animated: true, suffix: "+" },
-    { value: 165036, label: "Households Impacted", animated: true },
-    { value: 1157, label: "Villages Covered", animated: true },
-    { value: 18, label: "Districts Served", animated: true },
-    { value: 14375, label: "SHGs Formed", animated: true },
-    { value: 285, label: "Gram Panchayats", animated: true },
-    { value: 2, label: "FPOs Promoted", animated: true },
-    { value: 608, label: "Team Members", animated: true }
+    { value: 20, label: "Years of Experience", animated: true, suffix: "+" },
+    { value: 50000, label: "Members Impacted", animated: true, suffix: "+" },
+    { value: 100, label: "Villages Covered", animated: true, suffix: "+" },
+    { value: 500, label: "SHGs/Groups Strengthened", animated: true, suffix: "+" },
+    { value: 18, label: "Districts in Odisha", animated: true }
   ];
 
   // Featured Programs (showing first 6)
   const featuredPrograms = thematicAreas.slice(0, 6);
 
-  // Core Values
-  const coreValues = [
-    {
-      icon: <FaHandHoldingHeart />,
-      title: "Inclusion",
-      description: "We serve all communities, prioritizing the most marginalized and underserved"
-    },
-    {
-      icon: <FaUsers />,
-      title: "Community-Driven",
-      description: "Empowering communities through participatory and sustainable development practices"
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "Innovation",
-      description: "Adopting new methods to enhance efficiency, effectiveness, and scalability"
-    },
-    {
-      icon: <FaHandshake />,
-      title: "Collaboration",
-      description: "Working hand-in-hand with government, partners, and local institutions"
-    }
-  ];
+  // Icon mapping for Core Values
+  const valueIcons = {
+    "Inclusion": <FaHandHoldingHeart />,
+    "Community-Driven": <FaUsers />,
+    "Innovation": <FaLightbulb />,
+    "Collaboration": <FaHandshake />
+  };
 
   return (
     <div>
@@ -55,7 +36,12 @@ const Home = () => {
         description="Building sustainable livelihoods and fostering self-reliance through innovative programs reaching 165,000+ families across 18 districts"
         primaryButton={{ text: "Our Impact", link: "/impact-stories" }}
         secondaryButton={{ text: "Get Involved", link: "/get-involved" }}
-        backgroundImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600"
+        images={[
+          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600",
+          "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600",
+          "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600",
+          "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600"
+        ]}
       />
 
       {/* Mission & Vision Section */}
@@ -94,10 +80,10 @@ const Home = () => {
 
           {/* Core Values Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreValues.map((value, index) => (
+            {organizationInfo.coreValues.map((value, index) => (
               <FeatureCard
                 key={index}
-                icon={<div className="text-primary text-4xl">{value.icon}</div>}
+                icon={<div className="text-primary text-4xl">{valueIcons[value.title] || <FaHandHoldingHeart />}</div>}
                 title={value.title}
                 description={value.description}
               />
@@ -129,6 +115,8 @@ const Home = () => {
                 icon={program.icon}
                 description={program.description}
                 targetGroups={program.targetGroups}
+                approach={program.approach}
+                outcome={program.outcome}
                 link="/our-work"
               />
             ))}
@@ -143,23 +131,85 @@ const Home = () => {
       </section>
 
       {/* Key Achievements Section */}
-      <section className="section-padding bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="section-padding bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
               Key Achievements
             </h2>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <ul className="space-y-4">
-                {organizationInfo.achievements.map((achievement, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center mr-4 mt-1">
-                      
-                    </span>
-                    <span className="text-gray-700 text-lg">{achievement}</span>
-                  </li>
-                ))}
-              </ul>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our commitment to excellence has led to significant milestones in rural development
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* List of high-level achievements */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-heading font-bold text-gray-800 mb-6">Overview</h3>
+              <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <ul className="space-y-4">
+                  {organizationInfo.achievements.map((achievement, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                        <FaHandshake size={12} />
+                      </span>
+                      <span className="text-gray-700 font-medium">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Detailed Achievement Highlight */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="bg-primary p-6 text-white">
+                <h3 className="text-2xl font-heading font-bold">Spotlight: Capacity Building</h3>
+                <p className="text-primary-light mt-2 text-sm">Of Community Institutions</p>
+              </div>
+              <div className="p-8">
+                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  "Capacity building has remained a cross-cutting focus to ensure long-term sustainability of programmes and institutions."
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 border-b pb-2">Key Interventions</h4>
+                    <ul className="space-y-2">
+                      {["Training on governance, finance, and compliance", "Exposure visits and peer learning", "Leadership development for youth, women, and producer leaders"].map((item, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start">
+                          <span className="text-primary mr-2">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 border-b pb-2">Measurable Impact</h4>
+                    <ul className="space-y-2">
+                      {[
+                        "50+ training programmes/workshops conducted",
+                        "1,200+ community members trained",
+                        "Improved institutional performance (meetings, records, compliance)",
+                        "Increased participation of women and youth in leadership roles"
+                      ].map((item, i) => (
+                        <li key={i} className="text-xs text-gray-600 flex items-start">
+                          <span className="text-accent mr-2">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <div className="bg-secondary/5 p-4 rounded-lg">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-wider">Overall Outcome</span>
+                    <p className="text-sm text-gray-700 mt-1">
+                      Community institutions became more confident, self-reliant, and capable of managing development initiatives independently.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

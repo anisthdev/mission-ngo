@@ -64,30 +64,26 @@ export const organizationInfo = {
   },
 
   // Mission, Vision, Values
-  mission: "To strengthen rural communities by enhancing their capacities in livelihood, enterprise, and institution-building through participatory, innovative, and sustainable development practices.",
+  mission: "To enable sustainable livelihoods, strengthen grassroots institutions, and improve the socio-economic well-being of marginalized communities through participatory and innovative development interventions.",
 
-  vision: "To create a just and empowered society where every individual, regardless of background, has equal access to livelihoods, dignity, and opportunity.",
+  vision: "A just and inclusive society where communities are self-reliant, resilient, and capable of driving their own development with dignity.",
 
   coreValues: [
     {
       title: "Inclusion",
-      description: "We serve all communities, prioritizing the most marginalized and underserved"
+      description: "We ensure the participation of women, youth, small farmers, artisans, and vulnerable groups in all our programmes, leaving no one behind."
     },
     {
-      title: "Dignity",
-      description: "Every individual deserves to live and work with dignity and purpose"
+      title: "Community-Driven",
+      description: "Our programmes are designed and implemented with active community involvement, local leadership, and ownership."
     },
     {
-      title: "Sustainability",
-      description: "We design programs that are community-owned and long-lasting"
-    },
-    {
-      title: "Transparency",
-      description: "We are accountable in every action - financially, ethically, and programmatically"
+      title: "Innovation",
+      description: "We integrate technology, value-chain approaches, and innovative models such as IoT-based solutions, digital platforms, and market-led interventions."
     },
     {
       title: "Collaboration",
-      description: "We work hand-in-hand with government, partners, and local institutions"
+      description: "We work closely with government departments, NABARD, CSR partners, community institutions, and other stakeholders for collective impact."
     }
   ],
 
@@ -98,11 +94,11 @@ export const organizationInfo = {
 
   // Key Achievements
   achievements: [
-    "Mobilized over 10,000 women and youth through skilling and entrepreneurship initiatives",
-    "Facilitated the formation and capacity building of multiple FPOs and SHG collectives",
-    "Promoted rural microenterprises based on pottery, terracotta, food processing, millet, and bamboo crafts",
-    "Linked rural producers to national marketing platforms like ONDC",
-    "Digitized more than 13000 SHGs covering 147000 women"
+    "Successful implementation of NABARD-supported projects",
+    "Formation and strengthening of FPOs and producer collectives",
+    "Market linkage of rural products to local and national markets",
+    "Adoption of technology-driven solutions in agriculture and livelihoods",
+    "Capacity building of community institutions for sustainable growth"
   ],
 
   // Approach
