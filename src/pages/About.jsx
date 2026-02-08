@@ -10,7 +10,7 @@ const About = () => {
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600" 
+            src="/images/assets/capacity-building-2.jpg" 
             alt="About MISSION" 
             className="w-full h-full object-cover opacity-30"
           />
@@ -48,7 +48,7 @@ const About = () => {
               >
                 <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" 
+                    src="/images/assets/secretary.png" 
                     alt={secretaryMessage.secretary} 
                     className="w-full h-full object-cover"
                   />

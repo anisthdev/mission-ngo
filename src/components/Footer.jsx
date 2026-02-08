@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           <div className="flex space-x-6">
             <a
-              href={`https://facebook.com/${organizationInfo.contacts.socialMedia.facebook}`}
+              href={organizationInfo.contacts.socialMedia.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
@@ -43,7 +43,7 @@ const Footer = () => {
               <FaFacebookF size={18} />
             </a>
             <a
-              href={`https://youtube.com/${organizationInfo.contacts.socialMedia.youtube}`}
+              href={organizationInfo.contacts.socialMedia.youtube}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"

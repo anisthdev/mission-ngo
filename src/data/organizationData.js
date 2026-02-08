@@ -58,8 +58,8 @@ export const organizationInfo = {
       }
     ],
     socialMedia: {
-      facebook: "Mission Odisha",
-      youtube: "@missionwebodisha"
+      facebook: "https://www.facebook.com/missionodisha",
+      youtube: "https://www.youtube.com/@missionwebodisha"
     }
   },
 
@@ -202,6 +202,7 @@ export const organizationInfo = {
 
   // Bank Account Details
   bankDetails: {
+    upiId: "missionfund@indianbk",
     govtGrants: {
       accountHolder: "MISSION",
       bankName: "Indian Bank",

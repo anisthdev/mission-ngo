@@ -41,10 +41,10 @@ const Home = () => {
         primaryButton={{ text: "Our Impact", link: "/impact-stories" }}
         secondaryButton={{ text: "Get Involved", link: "/get-involved" }}
         images={[
-          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600",
-          "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600",
-          "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600",
-          "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600"
+          "/images/assets/slideshow-1.jpg",
+          "/images/assets/slideshow-2.jpg",
+          "/images/assets/slideshow-3.jpg",
+          "/images/assets/slideshow-4.jpg"
         ]}
       />
 
@@ -162,7 +162,7 @@ const Home = () => {
       <ImpactStats stats={impactStatistics} />
 
       {/* Featured Programs Section */}
-      <section className="section-padding bg-primary/5">
+      <section className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
@@ -195,7 +195,7 @@ const Home = () => {
                   targetGroups={program.targetGroups}
                   approach={program.approach}
                   outcome={program.outcome}
-                  link="/our-work"
+                  slug={program.slug}
                 />
               </motion.div>
             ))}
@@ -207,7 +207,7 @@ const Home = () => {
       <TimelineSection />
 
       {/* Key Achievements Section - Redesigned as a Gallery */}
-      <section className="bg-[#1A3C34] py-24 relative overflow-hidden">
+      <section className="bg-primary py-24 relative overflow-hidden">
         {/* Decorative Watermark */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
           <h2 className="text-[20vw] font-heading font-black leading-none text-white whitespace-nowrap">
@@ -302,10 +302,10 @@ const Home = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-[#F9F7F2] rounded-3xl overflow-hidden flex flex-col md:flex-row h-auto shadow-xl group hover:shadow-2xl transition-all duration-500 border border-primary/5"
+                  className="bg-slate-50 rounded-3xl overflow-hidden flex flex-col md:flex-row h-auto shadow-xl group hover:shadow-2xl transition-all duration-500 border border-slate-100"
                 >
                   {/* Icon Box with Ghost Effect */}
-                  <div className="md:w-1/3 bg-white p-8 flex items-center justify-center relative overflow-hidden border-r border-primary/5">
+                  <div className="md:w-1/3 bg-white p-8 flex items-center justify-center relative overflow-hidden border-r border-slate-100">
                     {/* Ghost Icon */}
                     <div className={`absolute -bottom-4 -right-4 text-8xl opacity-[0.03] ${item.color} transform rotate-12 group-hover:rotate-0 transition-transform duration-700`}>
                       {item.icon}

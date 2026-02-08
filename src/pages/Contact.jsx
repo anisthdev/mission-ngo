@@ -22,7 +22,7 @@ const Contact = () => {
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600" 
+            src="/images/assets/misc-2.jpg" 
             alt="Contact Us" 
             className="w-full h-full object-cover"
           />

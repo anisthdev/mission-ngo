@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 
 // Program Card Component
-export const ProgramCard = ({ title, image, description, targetGroups, approach, outcome, link }) => {
+export const ProgramCard = ({ title, image, description, targetGroups, approach, outcome, link, slug }) => {
+  const detailLink = link || (slug ? `/our-work/${slug}` : null);
+
   return (
     <div className="bg-white rounded-3xl border border-primary/5 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
       {/* Image Header with Gradient Overlay */}
@@ -52,10 +54,10 @@ export const ProgramCard = ({ title, image, description, targetGroups, approach,
           </div>
         )}
 
-        {link && (
+        {detailLink && (
           <div className="mt-auto pt-6 border-t border-gray-100">
             <Link
-              to={link}
+              to={detailLink}
               className="inline-flex items-center text-primary font-bold text-sm uppercase tracking-widest group/link hover:text-accent transition-colors"
             >
               Explore Full Program Detail 
@@ -85,30 +87,36 @@ export const ImpactStatCard = ({ title, value, description, icon }) => {
 };
 
 // Story Card Component
-export const StoryCard = ({ title, name, location, story, image, category, impact }) => {
+export const StoryCard = ({ title, name, location, story, image, category, impact, slug }) => {
+  const detailLink = `/impact-stories/${slug}`;
+
   return (
     <div className="bg-white rounded-[2.5rem] border border-primary/5 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col h-full">
       {/* Image Section */}
       <div className="relative h-72 overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
+        <Link to={detailLink}>
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          />
+        </Link>
         <div className="absolute top-6 left-6">
           <span className="bg-accent text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg shadow-accent/20">
             {category}
           </span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
 
       {/* Content Section */}
       <div className="p-10 flex flex-col flex-grow">
         <div className="mb-6">
-          <h3 className="text-2xl font-heading font-bold text-primary mb-2 leading-tight group-hover:text-accent transition-colors">
-            {title}
-          </h3>
+          <Link to={detailLink}>
+            <h3 className="text-2xl font-heading font-bold text-primary mb-2 leading-tight group-hover:text-accent transition-colors">
+              {title}
+            </h3>
+          </Link>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xs">
               {name.charAt(0)}
@@ -126,14 +134,23 @@ export const StoryCard = ({ title, name, location, story, image, category, impac
 
         {/* Impact Badge */}
         <div className="mt-auto pt-6 border-t border-gray-100">
-          <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10 flex items-center gap-4">
-            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent">
-              <FaCheckCircle size={18} />
+          <div className="flex flex-col gap-4">
+            <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10 flex items-center gap-4">
+              <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent">
+                <FaCheckCircle size={18} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black text-primary uppercase tracking-widest leading-none mb-1">Key Impact</p>
+                <p className="text-sm font-bold text-gray-800 leading-none">{impact}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-[10px] font-black text-primary uppercase tracking-widest leading-none mb-1">Key Impact</p>
-              <p className="text-sm font-bold text-gray-800 leading-none">{impact}</p>
-            </div>
+            
+            <Link 
+              to={detailLink} 
+              className="inline-flex items-center justify-center gap-2 text-primary font-bold text-xs uppercase tracking-widest hover:text-accent transition-colors pt-2"
+            >
+              Read Full Story <FaArrowRight size={10} />
+            </Link>
           </div>
         </div>
       </div>

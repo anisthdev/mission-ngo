@@ -66,7 +66,7 @@ export const impactStories = [
     name: "Radha Devi",
     location: "Dhenkanal District",
     story: "After joining LEDP training program, Radha started her own tailoring business. Today she employs 3 other women and earns ₹15,000 per month.",
-    image: "https://images.unsplash.com/photo-1583396510344-c380fc6bfb2e?w=800",
+    image: "/images/assets/livelihood-1.jpg",
     impact: "Income increased by 300%",
     year: 2023
   },
@@ -77,7 +77,7 @@ export const impactStories = [
     name: "Santosh Kumar",
     location: "Angul District",
     story: "As a member of the Farmer Producer Organization, Santosh now gets fair prices for his produce and access to quality inputs at lower costs.",
-    image: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=800",
+    image: "/images/assets/fpo-4.jpeg",
     impact: "30% increase in income",
     year: 2024
   },
@@ -88,7 +88,7 @@ export const impactStories = [
     name: "Priya Sahoo",
     location: "Bhubaneswar",
     story: "After completing skill training in hospitality, Priya secured employment at a reputed hotel chain, becoming the first in her family to have a formal job.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800",
+    image: "/images/assets/capacity-building-4.jpg",
     impact: "Secured formal employment",
     year: 2023
   },
@@ -99,7 +99,7 @@ export const impactStories = [
     name: "Biren Biswal",
     location: "Dhenkanal",
     story: "Through PM Vishwakarma Yojana, Biren received modern tools for his pottery work. He now sells his products online reaching customers across India.",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800",
+    image: "/images/assets/artisan-2.jpg",
     impact: "Market reach expanded nationally",
     year: 2024
   },
@@ -110,7 +110,7 @@ export const impactStories = [
     name: "Janjati Atmanirbhar Kendra",
     location: "Keonjhar District",
     story: "700+ tribal individuals trained through the Kendra, preserving traditional skills while creating sustainable livelihoods.",
-    image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800",
+    image: "/images/assets/misc-1.jpg",
     impact: "700+ tribal individuals empowered",
     year: 2023
   },
@@ -121,7 +121,7 @@ export const impactStories = [
     name: "Laxmi SHG",
     location: "Bhubaneswar",
     story: "After digital training, Laxmi SHG now sells products on ONDC platform, reaching customers across Odisha without intermediaries.",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
+    image: "/images/assets/awareness-1.jpg",
     impact: "Direct market access",
     year: 2024
   }

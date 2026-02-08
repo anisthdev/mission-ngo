@@ -10,7 +10,7 @@ const Hero = ({
   primaryButton,
   secondaryButton,
   images = [],
-  height = "h-[700px] md:h-[850px]",
+  height = "h-[800px] lg:h-screen",
   interval = 6000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +25,7 @@ const Hero = ({
     return () => clearInterval(timer);
   }, [images.length, interval]);
 
-  const fallbackImage = 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600';
+  const fallbackImage = '/images/assets/slideshow-1.jpg';
   const displayImages = images.length > 0 ? images : [fallbackImage];
 
   return (

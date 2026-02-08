@@ -19,7 +19,7 @@ const ImpactStories = () => {
       <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-accent">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600" 
+            src="/images/assets/misc-4.jpg" 
             alt="Impact Stories" 
             className="w-full h-full object-cover opacity-30"
           />

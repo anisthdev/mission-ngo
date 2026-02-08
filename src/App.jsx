@@ -7,7 +7,9 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import OurWork from './pages/OurWork';
+import ProgramDetail from './pages/ProgramDetail';
 import ImpactStories from './pages/ImpactStories';
+import StoryDetail from './pages/StoryDetail';
 import Resources from './pages/Resources';
 import GetInvolved from './pages/GetInvolved';
 import Contact from './pages/Contact';
@@ -23,7 +25,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/our-work" element={<OurWork />} />
+            <Route path="/our-work/:slug" element={<ProgramDetail />} />
             <Route path="/impact-stories" element={<ImpactStories />} />
+            <Route path="/impact-stories/:slug" element={<StoryDetail />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/contact" element={<Contact />} />

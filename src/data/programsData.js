@@ -3,8 +3,9 @@
 export const thematicAreas = [
   {
     id: 1,
+    slug: "livelihood-enterprise-development",
     title: "Livelihood & Enterprise Development",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800",
+    image: "/images/assets/livelihood-4.jpeg",
     description: "We support rural households to enhance income and economic resilience through a comprehensive approach of skill development and market-led interventions.",
     approach: [
       "Skill development and entrepreneurship training",
@@ -12,12 +13,26 @@ export const thematicAreas = [
       "Market linkage and value addition support"
     ],
     outcome: "Improved household income and sustainable self-employment opportunities",
-    programs: ["LEDP", "EDP", "Rural entrepreneurship support"]
+    programs: ["LEDP", "EDP", "Rural entrepreneurship support"],
+    gallery: [
+      "/images/assets/livelihood-1.jpg",
+      "/images/assets/livelihood-2.jpg",
+      "/images/assets/livelihood-3.jpg",
+      "/images/assets/livelihood-4.jpeg",
+      "/images/assets/livelihood-5.jpeg",
+      "/images/assets/livelihood-6.jpg",
+      "/images/assets/livelihood-7.jpg",
+      "/images/assets/entrepreneurship-1.jpg",
+      "/images/assets/entrepreneurship-2.jpg",
+      "/images/assets/entrepreneurship-3.jpg",
+      "/images/assets/entrepreneurship-4.jpg"
+    ]
   },
   {
     id: 2,
+    slug: "traditional-artisan-empowerment",
     title: "Traditional Artisan Empowerment",
-    image: "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=800",
+    image: "/images/assets/artisan-3.jpg",
     description: "Traditional artisans often lack branding and market visibility. We bridge this gap through design and market support.",
     approach: [
       "Product design and quality improvement",
@@ -25,12 +40,24 @@ export const thematicAreas = [
       "Linkages to online and institutional markets"
     ],
     outcome: "Enhanced income and revival of traditional livelihoods.",
-    programs: ["PM Vishwakarma", "Gramodyog Vikas Yojana"]
+    programs: ["PM Vishwakarma", "Gramodyog Vikas Yojana"],
+    gallery: [
+      "/images/assets/artisan-1.jpg",
+      "/images/assets/artisan-2.jpg",
+      "/images/assets/artisan-3.jpg",
+      "/images/assets/artisan-4.jpeg",
+      "/images/assets/artisan-5.jpg",
+      "/images/assets/artisan-6.jpg",
+      "/images/assets/artisan-7.jpg",
+      "/images/assets/artisan-8.jpg",
+      "/images/assets/artisan-9.jpg"
+    ]
   },
   {
     id: 3,
+    slug: "skill-development",
     title: "Skill Development",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800",
+    image: "/images/assets/capacity-building-3.jpg",
     description: "Youth unemployment remains a key challenge. Our initiatives focus on preparing youth for the modern economy.",
     approach: [
       "Life skills and employability training",
@@ -38,12 +65,24 @@ export const thematicAreas = [
       "Self-employment and placement support"
     ],
     outcome: "Improved employability and youth participation in the local economy.",
-    programs: ["Vocational training", "Career counseling"]
+    programs: ["Vocational training", "Career counseling"],
+    gallery: [
+      "/images/assets/capacity-building-1.jpg",
+      "/images/assets/capacity-building-2.jpg",
+      "/images/assets/capacity-building-3.jpg",
+      "/images/assets/capacity-building-4.jpg",
+      "/images/assets/capacity-building-5.jpg",
+      "/images/assets/capacity-building-6.jpg",
+      "/images/assets/capacity-building-7.jpeg",
+      "/images/assets/misc-1.jpg",
+      "/images/assets/misc-2.jpg"
+    ]
   },
   {
     id: 4,
+    slug: "institutional-strengthening",
     title: "Institutional Strengthening",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800",
+    image: "/images/assets/fpo-3.jpg",
     description: "Strong institutions are key to sustainable development. We build the capacity of community-led organizations.",
     approach: [
       "SHG and community institution capacity building",
@@ -51,12 +90,24 @@ export const thematicAreas = [
       "Leadership development"
     ],
     outcome: "Self-managed and resilient community institutions.",
-    programs: ["SHG Federation", "FPO Management"]
+    programs: ["SHG Federation", "FPO Management"],
+    gallery: [
+      "/images/assets/fpo-1.jpg",
+      "/images/assets/fpo-2.jpeg",
+      "/images/assets/fpo-3.jpg",
+      "/images/assets/fpo-4.jpeg",
+      "/images/assets/fpo-5.jpeg",
+      "/images/assets/fpo-6.jpeg",
+      "/images/assets/fpo-7.jpeg",
+      "/images/assets/fpo-8.jpeg",
+      "/images/assets/fpo-9.jpeg"
+    ]
   },
   {
     id: 5,
+    slug: "health-awareness",
     title: "Health Awareness",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
+    image: "/images/assets/health-1.jpg",
     description: "Preventive health awareness is critical for community well-being and long-term prosperity.",
     approach: [
       "Nutrition, sanitation, and hygiene campaigns",
@@ -64,7 +115,18 @@ export const thematicAreas = [
       "Convergence with government health services"
     ],
     outcome: "Improved health practices and community awareness.",
-    programs: ["Health camps", "Sanitation drives"]
+    programs: ["Health camps", "Sanitation drives"],
+    gallery: [
+      "/images/assets/health-1.jpg",
+      "/images/assets/health-2.jpeg",
+      "/images/assets/health-3.jpeg",
+      "/images/assets/health-4.jpeg",
+      "/images/assets/health-5.jpeg",
+      "/images/assets/awareness-1.jpg",
+      "/images/assets/awareness-2.jpeg",
+      "/images/assets/misc-3.jpg",
+      "/images/assets/misc-4.jpg"
+    ]
   }
 ];
 

@@ -19,14 +19,14 @@ const OurWork = () => {
   return (
     <div className="bg-warm-sand min-h-screen">
       {/* Page Hero */}
-      <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-[#1A3C34]">
+      <section className="relative h-[450px] flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600" 
+            src="/images/assets/fpo-5.jpeg" 
             alt="Our Work" 
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1A3C34]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/90"></div>
         </div>
         <div className="container-custom relative z-10 text-center text-white">
           <motion.h1 
@@ -71,6 +71,7 @@ const OurWork = () => {
                   description={program.description}
                   approach={program.approach}
                   outcome={program.outcome}
+                  slug={program.slug}
                 />
               </motion.div>
             ))}

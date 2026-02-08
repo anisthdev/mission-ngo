@@ -20,7 +20,7 @@ const TimelineSection = () => {
   };
 
   return (
-    <section className="section-padding bg-warm-sand overflow-hidden">
+    <section className="section-padding bg-slate-50 overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.p 
