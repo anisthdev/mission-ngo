@@ -24,13 +24,26 @@ const Footer = () => {
       {/* Top Branding Section */}
       <div className="bg-white/5 py-12 border-b border-white/5">
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-4xl font-heading font-black text-white tracking-tight">
-              MISSION
-            </h3>
-            <p className="text-secondary-light font-bold uppercase tracking-[0.3em] text-xs mt-2">
-              Engross • Enable • Empower
-            </p>
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="bg-white p-2 rounded-xl">
+              <img 
+                src="/images/assets/logo.jpg" 
+                alt="MISSION New Logo" 
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+            <div className="hidden md:block h-12 w-px bg-white/10"></div>
+            <div className="flex flex-col items-center md:items-start opacity-80 hover:opacity-100 transition-opacity">
+              <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-bold">Our Legacy</span>
+              <div className="bg-white p-2 rounded-lg">
+                <img 
+                  src="/images/assets/logo-old.jpg" 
+                  alt="MISSION Old Logo" 
+                  className="h-10 w-auto object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+              </div>
+            </div>
           </div>
           <div className="flex space-x-6">
             <a

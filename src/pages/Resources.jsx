@@ -62,10 +62,12 @@ const Resources = () => {
       title: "Annual Reports",
       icon: <FaFilePdf />,
       items: [
-        { name: "Annual Report 2024-25", status: "Coming Soon", locked: true },
-        { name: "Annual Report 2023-24", status: "Coming Soon", locked: true }
+        { name: "Annual Report 2024-25", status: "Download", url: "/reports/AR 2024-25.pdf" },
+        { name: "Annual Report 2023-24", status: "Download", url: "/reports/AR 2023-24.pdf" },
+        { name: "Annual Report 2022-23", status: "Download", url: "/reports/AR 2022-23.pdf" }
       ]
     },
+    /*
     {
       title: "Training Manuals",
       icon: <FaFileAlt />,
@@ -82,6 +84,7 @@ const Resources = () => {
         { name: "Rural Technology Adoption Report", status: "Coming Soon", locked: true }
       ]
     }
+    */
   ];
 
   return (
@@ -152,21 +155,41 @@ const Resources = () => {
 
                 <div className="space-y-4">
                   {category.items.map((item, i) => (
-                    <div 
-                      key={i} 
-                      className="flex items-center justify-between p-6 rounded-2xl bg-warm-sand border border-transparent hover:border-accent/20 transition-all group"
-                    >
-                      <div className="flex items-center gap-4">
-                        <span className="text-gray-400 font-medium">{i + 1}.</span>
-                        <span className="text-gray-700 font-bold group-hover:text-primary transition-colors">{item.name}</span>
+                    item.url ? (
+                      <a 
+                        key={i} 
+                        href={item.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-6 rounded-2xl bg-warm-sand border border-transparent hover:border-accent/20 transition-all group"
+                      >
+                        <div className="flex items-center gap-4">
+                          <span className="text-gray-400 font-medium">{i + 1}.</span>
+                          <span className="text-gray-700 font-bold group-hover:text-primary transition-colors">{item.name}</span>
+                        </div>
+                        <div className="flex items-center gap-3 px-4 py-1.5 bg-white rounded-full border border-gray-100">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-accent">
+                            {item.status}
+                          </span>
+                        </div>
+                      </a>
+                    ) : (
+                      <div 
+                        key={i} 
+                        className="flex items-center justify-between p-6 rounded-2xl bg-warm-sand border border-transparent hover:border-accent/20 transition-all group"
+                      >
+                        <div className="flex items-center gap-4">
+                          <span className="text-gray-400 font-medium">{i + 1}.</span>
+                          <span className="text-gray-700 font-bold group-hover:text-primary transition-colors">{item.name}</span>
+                        </div>
+                        <div className="flex items-center gap-3 px-4 py-1.5 bg-white rounded-full border border-gray-100">
+                          {item.locked && <FaLock className="text-[10px] text-gray-300" />}
+                          <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">
+                            {item.status}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3 px-4 py-1.5 bg-white rounded-full border border-gray-100">
-                        {item.locked && <FaLock className="text-[10px] text-gray-300" />}
-                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">
-                          {item.status}
-                        </span>
-                      </div>
-                    </div>
+                    )
                   ))}
                 </div>
               </motion.div>

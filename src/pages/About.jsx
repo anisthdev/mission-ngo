@@ -48,7 +48,7 @@ const About = () => {
               >
                 <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
                   <img 
-                    src="/images/assets/secretary.png" 
+                    src="/images/assets/secretary.jpg" 
                     alt={secretaryMessage.secretary} 
                     className="w-full h-full object-cover"
                   />

@@ -23,12 +23,17 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="flex flex-col">
-              <span className="text-3xl md:text-4xl font-heading font-black text-primary tracking-tight leading-none">
+          <Link to="/" className="flex items-center gap-4 group">
+            <img 
+              src="/images/assets/logo.jpg" 
+              alt="MISSION Logo" 
+              className="h-14 md:h-16 w-auto object-contain"
+            />
+            <div className="flex flex-col border-l border-primary/10 pl-4 hidden sm:flex">
+              <span className="text-xl md:text-2xl font-heading font-black text-primary tracking-tight leading-none">
                 MISSION
               </span>
-              <span className="text-[10px] md:text-xs text-accent font-bold uppercase tracking-[0.2em] mt-1">
+              <span className="text-[10px] text-accent font-bold uppercase tracking-[0.2em] mt-1">
                 Engross • Enable • Empower
               </span>
             </div>
