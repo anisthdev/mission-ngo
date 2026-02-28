@@ -100,7 +100,7 @@ export const projectsList = [
   { year: "2022-23", activity: "EDP", agency: "Director of Industries, Govt. of Odisha", status: "Completed" },
   { year: "2022-23", activity: "Formation & Promotion of FPO under CSS", agency: "NABCONS", status: "Ongoing" },
   { year: "2022-23", activity: "Jal Jeevan Mission", agency: "CED, Dept of PR&DW, Govt. of Odisha", status: "Completed" },
-  { year: "2022-23", activity: "LEDP on Goat Rearing", agency: "NABARD", status: "Ongoing" },
+  { year: "2022-23", activity: "Livelihood and Enterprise Development Programme (LEDP)", agency: "NABARD", status: "Ongoing" },
   { year: "2022-23", activity: "MEDP on mushroom", agency: "NABARD", status: "Completed" },
   { year: "2022-23", activity: "MEDP on Beekeeping", agency: "NABARD", status: "Completed" },
   { year: "2022-23", activity: "MEDP on masonry", agency: "NABARD", status: "Completed" },
