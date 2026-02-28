@@ -13,6 +13,7 @@ import StoryDetail from './pages/StoryDetail';
 import Resources from './pages/Resources';
 import GetInvolved from './pages/GetInvolved';
 import Contact from './pages/Contact';
+import Legal from './pages/Legal';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/legal" element={<Legal />} />
           </Routes>
         </main>
         <Footer />
