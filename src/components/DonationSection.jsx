@@ -1,12 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { organizationInfo } from '../data/organizationData';
 import { FaUniversity, FaQrcode, FaCopy, FaCheckCircle, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import QRCodeStyling from 'qr-code-styling';
 
 const DonationSection = () => {
   const [copied, setCopied] = useState(null);
   const [qrGenerated, setQrGenerated] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [qrUrl, setQrUrl] = useState(null);
   const [panError, setPanError] = useState(false);
+  const qrCodeInstance = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -15,6 +19,30 @@ const DonationSection = () => {
   });
 
   const upiId = organizationInfo.bankDetails.upiId;
+
+  // Initialize QR Code Stylist
+  useEffect(() => {
+    qrCodeInstance.current = new QRCodeStyling({
+      width: 300,
+      height: 300,
+      margin: 10,
+      dotsOptions: {
+        color: "#0F172A",
+        type: "rounded"
+      },
+      cornersSquareOptions: {
+        type: "extra-rounded",
+        color: "#0F172A"
+      },
+      cornersDotOptions: {
+        type: "dot",
+        color: "#2D5A27"
+      },
+      backgroundOptions: {
+        color: "#ffffff",
+      }
+    });
+  }, []);
 
   const copyToClipboard = (text, id) => {
     navigator.clipboard.writeText(text);
@@ -31,11 +59,8 @@ const DonationSection = () => {
   const generateUpiUrl = () => {
     const { name, mobile, amount, pan } = formData;
     let url = `upi://pay?pa=${upiId}&pn=MISSION&cu=INR`;
-    
     if (amount) url += `&am=${amount}`;
-    
     const isMobileValid = /^\d{10}$/.test(mobile);
-    
     if (name || isMobileValid || (pan && validatePan(pan))) {
       const mobilePart = isMobileValid ? `_${mobile}` : '';
       const namePart = name ? name.replace(/\s+/g, '_') : 'Donor';
@@ -45,34 +70,41 @@ const DonationSection = () => {
     } else {
       url += `&tn=${encodeURIComponent("General Donation to MISSION")}`;
     }
-    
     return url;
   };
 
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(generateUpiUrl())}`;
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    
-    // Prevent + or - in amount
-    if (name === 'amount' && (value.includes('+') || value.includes('-'))) {
-      return;
-    }
-
+    if (name === 'amount' && (value.includes('+') || value.includes('-'))) return;
     const newVal = name === 'pan' ? value.toUpperCase() : value;
     setFormData(prev => ({ ...prev, [name]: newVal }));
-    
-    if (name === 'pan') {
-      setPanError(!validatePan(value));
-    }
-
+    if (name === 'pan') setPanError(!validatePan(value));
     if (qrGenerated) setQrGenerated(false);
   };
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     const isMobileValid = /^\d{10}$/.test(formData.mobile);
     if (formData.name.trim() && isMobileValid && !panError) {
-      setQrGenerated(true);
+      setIsGenerating(true);
+      setQrGenerated(false);
+      
+      const upiUrl = generateUpiUrl();
+      qrCodeInstance.current.update({ data: upiUrl });
+
+      // Simulate a small delay for assembly feel
+      setTimeout(async () => {
+        try {
+          const blob = await qrCodeInstance.current.getRawData('png');
+          if (qrUrl) URL.revokeObjectURL(qrUrl); // Clean up old URL
+          const url = URL.createObjectURL(blob);
+          setQrUrl(url);
+          setIsGenerating(false);
+          setQrGenerated(true);
+        } catch (err) {
+          console.error("QR Generation failed", err);
+          setIsGenerating(false);
+        }
+      }, 1000);
     }
   };
 
@@ -269,20 +301,31 @@ const DonationSection = () => {
 
                 <button 
                   onClick={handleGenerate}
-                  disabled={!isFormValid}
-                  className={`w-full mt-8 py-4 ${!isFormValid ? 'bg-slate-600 opacity-50' : 'bg-accent hover:bg-accent-light shadow-xl shadow-black/20'} text-white rounded-xl font-bold uppercase tracking-[0.2em] text-xs transition-all flex items-center justify-center gap-3`}
+                  disabled={!isFormValid || isGenerating}
+                  className={`w-full mt-8 py-4 ${!isFormValid || isGenerating ? 'bg-slate-600 opacity-50' : 'bg-accent hover:bg-accent-light shadow-xl shadow-black/20'} text-white rounded-xl font-bold uppercase tracking-[0.2em] text-xs transition-all flex items-center justify-center gap-3`}
                 >
-                  <FaSyncAlt className={qrGenerated ? 'rotate-180' : ''} />
-                  <span>{qrGenerated ? 'Update QR Code' : 'Generate QR Code'}</span>
+                  <FaSyncAlt className={isGenerating || qrGenerated ? 'rotate-180' : ''} style={{ transition: isGenerating ? 'transform 1s linear infinite' : 'transform 0.5s' }} />
+                  <span>{isGenerating ? 'Generating...' : qrGenerated ? 'Update QR Code' : 'Generate QR Code'}</span>
                 </button>
               </div>
 
               {/* QR Part */}
               <div className="flex-shrink-0 w-full lg:w-auto text-center">
                 <div className="bg-white p-6 rounded-[3rem] shadow-2xl inline-block group mb-6">
-                  <div className="w-56 h-56 flex items-center justify-center">
+                  <div className="w-56 h-56 flex items-center justify-center relative">
                     <AnimatePresence mode="wait">
-                      {!qrGenerated ? (
+                      {isGenerating ? (
+                        <motion.div 
+                          key="loading"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="w-full h-full flex flex-col items-center justify-center"
+                        >
+                          <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mb-4"></div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 animate-pulse">Generating QR...</p>
+                        </motion.div>
+                      ) : !qrGenerated ? (
                         <motion.div 
                           key="empty"
                           initial={{ opacity: 0 }}
@@ -294,19 +337,42 @@ const DonationSection = () => {
                           <p className="text-[9px] font-black uppercase tracking-tighter leading-tight">Fill form to<br />generate QR</p>
                         </motion.div>
                       ) : (
-                        <motion.img 
+                        <motion.div 
                           key="code"
                           initial={{ scale: 0.8, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
-                          src={qrCodeUrl} 
-                          alt="UPI QR Code" 
-                          className="w-full h-full rounded-2xl" 
-                        />
+                          className="relative w-full h-full rounded-3xl overflow-hidden group/qr flex items-center justify-center bg-white"
+                        >
+                          {qrUrl && (
+                            <img 
+                              src={qrUrl} 
+                              alt="UPI QR Code" 
+                              className="w-full h-full object-contain rounded-2xl p-2 z-10" 
+                            />
+                          )}
+                          
+                          {/* Animated Gradient Overlay */}
+                          <div className="absolute inset-0 pointer-events-none opacity-20 group-hover/qr:opacity-30 transition-opacity z-20">
+                            <motion.div 
+                              animate={{ 
+                                x: ['-100%', '100%'],
+                                opacity: [0, 1, 0]
+                              }}
+                              transition={{ 
+                                duration: 2, 
+                                repeat: Infinity, 
+                                ease: "easeInOut",
+                                repeatDelay: 1
+                              }}
+                              className="absolute inset-0 bg-gradient-to-r from-transparent via-accent to-transparent skew-x-12"
+                            />
+                          </div>
+                        </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
                 </div>
-                <div className={`transition-opacity ${qrGenerated ? 'opacity-100' : 'opacity-20'}`}>
+                <div className={`transition-opacity ${qrGenerated && !isGenerating ? 'opacity-100' : 'opacity-20'}`}>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-2">Scan with any UPI App</p>
                   <div className="bg-white/5 py-2 px-4 rounded-xl border border-white/10 inline-flex items-center gap-2">
                     <span className="text-xs font-bold">{upiId}</span>
