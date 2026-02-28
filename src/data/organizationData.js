@@ -17,7 +17,7 @@ export const organizationInfo = {
     urn12A: "AABTM6676ME20231",
     urn80G: "AABTM6676MF20231",
     nitiAayogUID: "OR/2010/0024894",
-    csr1: "CSR00012345",
+    csr1: "CSR00075308",
     vtp: "VTP/OR/DKL/001"
   },
 

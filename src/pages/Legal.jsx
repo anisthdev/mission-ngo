@@ -11,31 +11,57 @@ const Legal = () => {
       title: "Registered with IGR",
       number: organizationInfo.registrations.igrNumber,
       description: "Registration with the Inspector General of Registration (IGR), Odisha for legal identity.",
-      file: "/reports/registration-document.pdf"
+      file: "/reports/registration-igr.pdf"
     },
     {
-      title: "Registered as VTP",
-      number: organizationInfo.registrations.vtp,
-      description: "Registered as a Vocational Training Provider (VTP) to deliver certified skill development programs.",
-      file: "/reports/registration-document.pdf"
+      title: "District Registration",
+      number: organizationInfo.registrations.districtNumber,
+      description: "Primary registration as a society in Dhenkanal district of Odisha.",
+      file: "/reports/registration-dkl.pdf"
     },
     {
-      title: "Registered under 12A & 80G",
-      number: `${organizationInfo.registrations.urn12A} | ${organizationInfo.registrations.urn80G}`,
-      description: "Income Tax exemption certificates ensuring transparency and tax benefits for donors.",
-      file: "/reports/registration-document.pdf"
+      title: "Registered under 12A",
+      number: organizationInfo.registrations.urn12A,
+      description: "Income Tax exemption certificate under section 12A of the Income Tax Act.",
+      file: "/reports/12a.pdf"
     },
     {
-      title: "Registered with NITI Aayog",
-      number: organizationInfo.registrations.nitiAayogUID,
-      description: "Unique ID on NGO Darpan (NITI Aayog) for government collaboration and recognition.",
-      file: "/reports/registration-document.pdf"
+      title: "Registered under 80G",
+      number: organizationInfo.registrations.urn80G,
+      description: "Income Tax exemption certificate under section 80G, allowing tax benefits for donors.",
+      file: "/reports/80g.pdf"
     },
     {
       title: "Registered with CSR-1",
       number: organizationInfo.registrations.csr1,
       description: "Ministry of Corporate Affairs (MCA) registration for undertaking Corporate Social Responsibility projects.",
-      file: "/reports/registration-document.pdf"
+      file: "/reports/csr-1.pdf"
+    },
+    {
+      title: "PAN Card",
+      number: organizationInfo.registrations.pan,
+      description: "Permanent Account Number issued by the Income Tax Department of India.",
+      file: "/reports/pan.pdf"
+    },
+    {
+      title: "GST Registration",
+      number: organizationInfo.registrations.gst,
+      description: "Goods and Services Tax registration for statutory financial compliance.",
+      file: "/reports/gst.pdf"
+    },
+    {
+      title: "Registered as VTP",
+      number: organizationInfo.registrations.vtp,
+      description: "Registered as a Vocational Training Provider (VTP) to deliver certified skill development programs.",
+      file: "/reports/registration-document.pdf",
+      missing: true
+    },
+    {
+      title: "Registered with NITI Aayog",
+      number: organizationInfo.registrations.nitiAayogUID,
+      description: "Unique ID on NGO Darpan (NITI Aayog) for government collaboration and recognition.",
+      file: "/reports/registration-document.pdf",
+      missing: true
     }
   ];
 
@@ -90,11 +116,18 @@ const Legal = () => {
                   {reg.title}
                 </h3>
                 
-                <div className="mb-4">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Registration No.</span>
-                  <span className="text-sm font-mono font-bold text-accent bg-accent/5 px-3 py-1 rounded-lg">
-                    {reg.number}
-                  </span>
+                <div className="mb-4 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Registration No.</span>
+                    <span className="text-sm font-mono font-bold text-accent bg-accent/5 px-3 py-1 rounded-lg">
+                      {reg.number}
+                    </span>
+                  </div>
+                  {reg.missing && (
+                    <span className="bg-amber-100 text-amber-700 text-[8px] font-black uppercase tracking-tighter px-2 py-1 rounded-full border border-amber-200">
+                      Pending Upload
+                    </span>
+                  )}
                 </div>
 
                 <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
@@ -103,14 +136,16 @@ const Legal = () => {
 
                 <div className="grid grid-cols-2 gap-4">
                   <button 
-                    onClick={() => setViewingFile(reg)}
-                    className="flex items-center justify-center gap-2 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold uppercase tracking-widest transition-all"
+                    onClick={() => !reg.missing && setViewingFile(reg)}
+                    disabled={reg.missing}
+                    className={`flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${reg.missing ? 'bg-slate-50 text-slate-300 cursor-not-allowed' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}`}
                   >
                     <FaEye /> View
                   </button>
                   <button 
-                    onClick={() => handleDownload(reg.file, `${reg.title.replace(/\s+/g, '_')}.pdf`)}
-                    className="flex items-center justify-center gap-2 py-3 bg-primary hover:bg-accent text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20 hover:shadow-accent/20"
+                    onClick={() => !reg.missing && handleDownload(reg.file, `${reg.title.replace(/\s+/g, '_')}.pdf`)}
+                    disabled={reg.missing}
+                    className={`flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all shadow-lg ${reg.missing ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-primary hover:bg-accent text-white shadow-primary/20 hover:shadow-accent/20'}`}
                   >
                     <FaDownload /> Download
                   </button>
