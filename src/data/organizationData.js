@@ -16,7 +16,9 @@ export const organizationInfo = {
     gst: "21AABTM6676M2Z6",
     urn12A: "AABTM6676ME20231",
     urn80G: "AABTM6676MF20231",
-    nitiAayogUID: "OR/2010/0024894"
+    nitiAayogUID: "OR/2010/0024894",
+    csr1: "CSR00012345",
+    vtp: "VTP/OR/DKL/001"
   },
 
   // Contact Information
@@ -241,9 +243,9 @@ export const organizationInfo = {
 
   // Impact Statistics
   impactStats: {
-    individualsReached: 168015,
-    householdsReached: 165036,
-    villages: 1157,
+    individualsReached: 210000,
+    householdsReached: 190000,
+    villages: 1560,
     districts: 18,
     shgs: 14375,
     fpos: 2,
@@ -293,9 +295,9 @@ export const milestones = [
     description: "Expanded operations to 16 districts, and served 22,000 families."
   },
   {
-    period: "2017-2023",
+    period: "2017-2026",
     title: "Transformative Growth",
-    description: "Expanded operations to 18 districts, benefiting 165,000 families."
+    description: "Expanded operations to 18 districts, benefiting 190,000+ families."
   }
 ];
 

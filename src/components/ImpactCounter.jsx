@@ -55,8 +55,16 @@ const ImpactCounter = ({ end, duration = 2000, suffix = "", prefix = "" }) => {
   };
 
   return (
-    <span ref={counterRef}>
-      {prefix}{formatNumber(count)}{suffix}
+    <span ref={counterRef} className="flex flex-col items-center">
+      {prefix && (
+        <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-1 leading-none">
+          {prefix}
+        </span>
+      )}
+      <span className="leading-none">
+        {formatNumber(count)}
+        {suffix && <span className="text-[0.6em] ml-0.5 align-top">{suffix}</span>}
+      </span>
     </span>
   );
 };
@@ -64,16 +72,16 @@ const ImpactCounter = ({ end, duration = 2000, suffix = "", prefix = "" }) => {
 // Stats Section Component with Counters
 export const ImpactStats = ({ stats }) => {
   return (
-    <div className="bg-slate-50 text-primary section-padding relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-        <div className="absolute -top-24 -left-24 w-64 h-64 border-4 border-primary rounded-full"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 border-4 border-primary rounded-full"></div>
+    <div className="bg-white text-primary section-padding relative overflow-hidden">
+      {/* Subtle Background Accent */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl -ml-48 -mb-48"></div>
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-primary">
             Our Impact in <span className="text-accent">Numbers</span>
           </h2>
           <div className="h-1 w-24 bg-accent mx-auto mb-6"></div>
@@ -82,10 +90,10 @@ export const ImpactStats = ({ stats }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-16 gap-x-12">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="text-4xl md:text-5xl font-heading font-bold text-primary mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-primary mb-4 group-hover:scale-105 transition-transform duration-500 inline-block">
                 {stat.animated ? (
                   <ImpactCounter
                     end={stat.value}
@@ -93,10 +101,20 @@ export const ImpactStats = ({ stats }) => {
                     prefix={stat.prefix || ""}
                   />
                 ) : (
-                  `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
+                  <div className="flex flex-col items-center">
+                    {stat.prefix && (
+                      <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-1 leading-none">
+                        {stat.prefix}
+                      </span>
+                    )}
+                    <span className="leading-none">
+                      {stat.value}
+                      {stat.suffix && <span className="text-[0.6em] ml-0.5 align-top">{stat.suffix}</span>}
+                    </span>
+                  </div>
                 )}
               </div>
-              <div className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <div className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-[0.2em] max-w-[150px] mx-auto leading-relaxed">
                 {stat.label}
               </div>
             </div>

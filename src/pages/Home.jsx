@@ -13,11 +13,11 @@ import { RiBankLine, RiTeamLine, RiLineChartLine, RiSeedlingLine, RiUserStarLine
 const Home = () => {
   // Impact Statistics for Counter
   const impactStatistics = [
-    { value: 20, label: "Years of Experience", animated: true, suffix: "+" },
-    { value: 50000, label: "Members Impacted", animated: true, suffix: "+" },
-    { value: 100, label: "Villages Covered", animated: true, suffix: "+" },
-    { value: 500, label: "SHGs/Groups Strengthened", animated: true, suffix: "+" },
-    { value: 18, label: "Districts in Odisha", animated: true }
+    { value: 23, label: "Years of Excellence", animated: true, suffix: "+" },
+    { value: 190000, label: "Households Impacted", animated: true, suffix: "+" },
+    { value: 1560, label: "Revenue Villages Covered", animated: true, suffix: "+" },
+    { value: 14375, label: "Women SHGs Strengthened", animated: true, suffix: "+" },
+    { value: 18, label: "Districts presence in Odisha", animated: true }
   ];
 
   // Featured Programs (showing first 6)
@@ -37,7 +37,7 @@ const Home = () => {
       <Hero
         title="Empowering Rural Communities Across Odisha"
         subtitle="Since 2002"
-        description="Building sustainable livelihoods and fostering self-reliance through innovative programs reaching 165,000+ families across 18 districts"
+        description="Building sustainable livelihoods and fostering self-reliance through innovative programs reaching 190,000+ families across 18 districts"
         primaryButton={{ text: "Our Impact", link: "/impact-stories" }}
         secondaryButton={{ text: "Get Involved", link: "/get-involved" }}
         images={[

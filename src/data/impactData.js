@@ -179,7 +179,7 @@ export const workingAreas = {
     deogarh: ["Youth engagement and artisan linkages"]
   },
   gramPanchayats: 285,
-  villages: 1157
+  villages: 1560
 };
 
 // Monitoring & Evaluation Metrics
