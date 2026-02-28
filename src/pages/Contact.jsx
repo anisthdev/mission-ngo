@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import { organizationInfo } from '../data/organizationData';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
   const offices = [
@@ -44,23 +44,23 @@ const Contact = () => {
       {/* Main Content */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-12 gap-16">
+          <div className="max-w-4xl mx-auto">
             
-            {/* Left: Contact Info */}
-            <div className="lg:col-span-5 space-y-12">
+            {/* Contact Info */}
+            <div className="space-y-12">
               <div>
-                <h2 className="text-3xl font-heading font-bold text-primary mb-8">Office Locations</h2>
-                <div className="space-y-8">
+                <h2 className="text-3xl font-heading font-bold text-primary mb-8 text-center">Office Locations</h2>
+                <div className="grid md:grid-cols-2 gap-8">
                   {offices.map((office, idx) => (
                     <motion.div 
                       key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1 }}
                       className="flex gap-6 p-8 bg-white rounded-3xl border border-primary/5 shadow-xl shadow-primary/5 group hover:border-accent/30 transition-all"
                     >
-                      <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary text-xl group-hover:bg-primary group-hover:text-white transition-all">
+                      <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary text-xl group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                         {office.icon}
                       </div>
                       <div>
@@ -73,8 +73,8 @@ const Contact = () => {
               </div>
 
               <div>
-                <h2 className="text-3xl font-heading font-bold text-primary mb-8">Direct Contact</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <h2 className="text-3xl font-heading font-bold text-primary mb-8 text-center">Direct Contact</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="p-6 bg-primary rounded-3xl text-white">
                     <FaEnvelope className="text-secondary-light text-2xl mb-4" />
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-1">Email Us</p>
@@ -85,54 +85,15 @@ const Contact = () => {
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-1">Call Us</p>
                     <p className="font-bold text-sm">+91-XXXX-XXXXXX</p>
                   </div>
-                </div>
-              </div>
-
-              <div className="p-8 bg-white rounded-3xl border border-primary/5 flex items-center gap-6">
-                <div className="w-12 h-12 bg-secondary-light/10 rounded-full flex items-center justify-center text-secondary-dark">
-                  <FaClock size={20} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-primary">Office Hours</h4>
-                  <p className="text-xs text-gray-500">Mon - Sat: 10:00 AM - 6:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Contact Form */}
-            <div className="lg:col-span-7">
-              <div className="bg-white p-10 md:p-16 rounded-[3.5rem] shadow-2xl shadow-primary/5 border border-primary/5 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
-                
-                <div className="relative z-10">
-                  <h3 className="text-3xl font-heading font-bold text-primary mb-2">Send a Message</h3>
-                  <p className="text-gray-500 mb-10">We usually respond within 24-48 hours.</p>
-
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Full Name</label>
-                        <input type="text" className="w-full px-6 py-4 bg-warm-sand rounded-2xl border border-transparent focus:border-accent/30 focus:outline-none transition-all font-medium" placeholder="John Doe" />
+                  <div className="p-6 bg-white rounded-3xl border border-primary/5 flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-2">
+                      <div className="w-10 h-10 bg-secondary-light/10 rounded-full flex items-center justify-center text-secondary-dark">
+                        <FaClock size={16} />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Email Address</label>
-                        <input type="email" className="w-full px-6 py-4 bg-warm-sand rounded-2xl border border-transparent focus:border-accent/30 focus:outline-none transition-all font-medium" placeholder="john@example.com" />
-                      </div>
+                      <h4 className="text-sm font-bold text-primary">Office Hours</h4>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Subject</label>
-                      <input type="text" className="w-full px-6 py-4 bg-warm-sand rounded-2xl border border-transparent focus:border-accent/30 focus:outline-none transition-all font-medium" placeholder="How can we help you?" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-2">Message</label>
-                      <textarea rows="5" className="w-full px-6 py-4 bg-warm-sand rounded-2xl border border-transparent focus:border-accent/30 focus:outline-none transition-all font-medium resize-none" placeholder="Your message here..."></textarea>
-                    </div>
-                    
-                    <button className="w-full py-5 bg-primary hover:bg-accent text-white rounded-2xl font-bold uppercase tracking-[0.2em] text-sm shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3 group">
-                      <span>Send Message</span>
-                      <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={14} />
-                    </button>
-                  </form>
+                    <p className="text-xs text-gray-500 ml-14">Mon - Sat: 10:00 AM - 6:00 PM</p>
+                  </div>
                 </div>
               </div>
             </div>
