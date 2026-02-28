@@ -162,6 +162,38 @@ export const organizationInfo = {
     }
   ],
 
+  // Supporting Partners Logos
+  partners: [
+    { name: "BMC", logo: "/images/partners/BMC.jpg" },
+    { name: "CSWB", logo: "/images/partners/CSWB.jpg" },
+    { name: "DC Handicrafts", logo: "/images/partners/DC Handicrafts.png" },
+    { name: "DIC", logo: "/images/partners/DIC.png" },
+    { name: "Dhenkanal Municipality", logo: "/images/partners/dkl municipality.jpg" },
+    { name: "EDII", logo: "/images/partners/EDII.png" },
+    { name: "Edujobs", logo: "/images/partners/Edujobs.png" },
+    { name: "Everonn", logo: "/images/partners/everonn.jpg" },
+    { name: "GoI", logo: "/images/partners/GoI.jpg" },
+    { name: "GoO", logo: "/images/partners/GoO.png" },
+    { name: "Jaga Mission", logo: "/images/partners/jaga mission.jpg" },
+    { name: "KVIC", logo: "/images/partners/KVIC logo.jpg" },
+    { name: "L & K", logo: "/images/partners/L & K.png" },
+    { name: "Laurus", logo: "/images/partners/laurus.png" },
+    { name: "Mission Shakti", logo: "/images/partners/Mission shakti.jpg" },
+    { name: "MSMEDFO", logo: "/images/partners/MSMEDFO-1.jpg" },
+    { name: "NABARD", logo: "/images/partners/NABARD.png" },
+    { name: "NABCONS", logo: "/images/partners/NABCONS.png" },
+    { name: "NEAC", logo: "/images/partners/NEAC.jpg" },
+    { name: "NHM", logo: "/images/partners/NHM.png" },
+    { name: "NIN", logo: "/images/partners/NIN.png" },
+    { name: "NSDC", logo: "/images/partners/NSDC.png" },
+    { name: "NYKS", logo: "/images/partners/NYKS.jpg" },
+    { name: "OCAC", logo: "/images/partners/OCAC.png" },
+    { name: "OKCL", logo: "/images/partners/OKCL.jpg" },
+    { name: "OSFDC", logo: "/images/partners/OSFDC.jpg" },
+    { name: "PM Viswakarma", logo: "/images/partners/PM Viswakarma.png" },
+    { name: "UMC", logo: "/images/partners/UMC.png" }
+  ],
+
   // Donor & Supporting Agencies
   donors: [
     "CAPART",

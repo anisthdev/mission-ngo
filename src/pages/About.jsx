@@ -128,14 +128,21 @@ const About = () => {
           </p>
         </div>
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-4">
-            {organizationInfo.donors.map((donor, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+            {organizationInfo.partners.map((partner, index) => (
               <motion.div 
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-warm-sand rounded-xl border border-primary/5 text-primary font-bold text-sm shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="flex items-center justify-center p-4 h-24 bg-warm-sand rounded-2xl border border-primary/5 hover:border-accent/30 transition-all group grayscale hover:grayscale-0"
               >
-                {donor}
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="max-w-full max-h-full object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all"
+                />
               </motion.div>
             ))}
           </div>

@@ -410,6 +410,41 @@ const Home = () => {
       {/* Donation Section */}
       <DonationSection />
 
+      {/* Supporting Partners Section */}
+      <section className="py-20 bg-white border-t border-primary/5">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <p className="text-accent font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Ecosystem</p>
+            <h2 className="text-3xl font-heading font-bold text-primary">Supporting Partners</h2>
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 hover:opacity-100 transition-opacity duration-500">
+            {organizationInfo.partners.slice(0, 12).map((partner, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="h-12 md:h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all"
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="h-full w-auto object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/about" className="text-sm font-bold text-primary/50 hover:text-accent transition-colors flex items-center justify-center gap-2 group">
+              View All 28+ Partners
+              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <section className="py-24 bg-primary-dark relative overflow-hidden">
         {/* Background Decorative Pattern */}
