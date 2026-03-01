@@ -60,8 +60,10 @@ export const organizationInfo = {
       }
     ],
     socialMedia: {
-      facebook: "https://www.facebook.com/missionodisha",
-      youtube: "https://www.youtube.com/@missionwebodisha"
+      facebook: "https://www.facebook.com/profile.php?id=100009801392845",
+      youtube: "https://www.youtube.com/@missionwebodisha",
+      instagram: "https://www.instagram.com/missionwebodisha/",
+      x: "https://x.com/MISSIONnpo"
     }
   },
 

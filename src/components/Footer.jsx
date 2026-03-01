@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaYoutube, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { organizationInfo } from '../data/organizationData';
 
 const Footer = () => {
@@ -63,6 +64,24 @@ const Footer = () => {
               aria-label="YouTube"
             >
               <FaYoutube size={18} />
+            </a>
+            <a
+              href={organizationInfo.contacts.socialMedia.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={18} />
+            </a>
+            <a
+              href={organizationInfo.contacts.socialMedia.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              aria-label="X (Twitter)"
+            >
+              <FaXTwitter size={18} />
             </a>
           </div>
         </div>
