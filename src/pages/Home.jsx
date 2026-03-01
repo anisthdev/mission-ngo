@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import Hero from '../components/Hero';
+import NewsMarquee from '../components/NewsMarquee';
 import { ImpactStats } from '../components/ImpactCounter';
 import { ProgramCard, FeatureCard } from '../components/Cards';
 import TimelineSection from '../components/TimelineSection';
@@ -47,6 +48,9 @@ const Home = () => {
           "/images/assets/slideshow-4.jpg"
         ]}
       />
+
+      {/* News & Announcements Marquee */}
+      <NewsMarquee />
 
       {/* Mission & Vision Section - "Who We Are" */}
       <section className="section-padding relative overflow-hidden">

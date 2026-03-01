@@ -126,17 +126,6 @@ const Hero = ({
         </div>
       </div>
 
-      {/* Bottom: Progress Bar Navigation */}
-      <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/10 z-20">
-        <motion.div
-          key={currentIndex}
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: interval / 1000, ease: "linear" }}
-          className="h-full bg-primary"
-        />
-      </div>
-      
       {/* Slide Counter/Indicators */}
       <div className="absolute bottom-8 right-8 z-20 flex items-center gap-4">
         <span className="text-white/80 font-mono text-sm">
