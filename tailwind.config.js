@@ -8,21 +8,20 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2D5A27', // Forest Green
-          light: '#4A8C42',
-          dark: '#1E3D1A',
+          DEFAULT: '#3E2723', // Rich Espresso-800
+          light: '#5D4037',
+          dark: '#211512',
         },
         secondary: {
-          DEFAULT: '#8B4513', // Saddle Brown
-          light: '#A0522D',
-          dark: '#5D2E0C',
+          DEFAULT: '#795548', // Coffee-600
+          light: '#A1887F',
+          dark: '#3E2723',
         },
         accent: {
-          DEFAULT: '#E67E22', // Warm Ochre
-          light: '#F39C12',
-          dark: '#D35400',
+          DEFAULT: '#D97706', // Amber-600
+          light: '#F59E0B',
+          dark: '#B45309',
         },
-        'warm-sand': '#FDF5E6',
       },
       fontFamily: {
         sans: ['Open Sans', 'Roboto', 'sans-serif'],
