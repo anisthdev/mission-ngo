@@ -29,7 +29,7 @@ export const organizationInfo = {
       lng: null
     },
     stateOffice: {
-      address: "Gajapati Nagar, Plot No.-167/339, Po-Sainik School, Bhubaneswar-751005, Odisha",
+      address: "Gajapati Nagar, Po-Sainik School, Bhubaneswar-751005, Odisha",
       lat: null,
       lng: null
     },
