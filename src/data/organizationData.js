@@ -3,7 +3,7 @@
 export const organizationInfo = {
   name: "MISSION",
   fullName: "MISSION, Dhenkanal",
-  tagline: "Engross, Enable, Empower",
+  tagline: "Educate, Uplift, Empower",
   established: 2002,
   website: "www.missionodisha.co.in",
 

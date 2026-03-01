@@ -35,7 +35,7 @@ const Header = () => {
                 MISSION
               </span>
               <span className="text-[10px] text-accent font-bold uppercase tracking-[0.2em] mt-1">
-                Engross • Enable • Empower
+                Educate • Uplift • Empower
               </span>
             </div>
           </Link>

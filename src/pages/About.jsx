@@ -30,7 +30,7 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="text-secondary-light font-bold uppercase tracking-[0.3em] text-sm"
           >
-            Engross • Enable • Empower
+            Educate • Uplift • Empower
           </motion.p>
         </div>
       </section>
