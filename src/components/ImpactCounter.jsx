@@ -93,7 +93,7 @@ export const ImpactStats = ({ stats }) => {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-16 gap-x-12">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-primary mb-4 group-hover:scale-105 transition-transform duration-500 inline-block">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-accent mb-4 group-hover:scale-105 transition-transform duration-500 inline-block">
                 {stat.animated ? (
                   <ImpactCounter
                     end={stat.value}
