@@ -9,8 +9,7 @@ const Footer = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/our-work', label: 'Our Work' },
-    { path: '/impact-stories', label: 'Impact Stories' },
-    { path: '/legal', label: 'Legal' }
+    { path: '/impact-stories', label: 'Impact Stories' }
   ];
 
   const resourceLinks = [

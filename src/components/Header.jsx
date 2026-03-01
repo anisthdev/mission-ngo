@@ -11,7 +11,6 @@ const Header = () => {
     { path: '/our-work', label: 'Our Work' },
     { path: '/impact-stories', label: 'Impact Stories' },
     { path: '/resources', label: 'Resources' },
-    { path: '/legal', label: 'Legal' },
     { path: '/contact', label: 'Contact' }
   ];
 
