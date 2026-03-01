@@ -51,7 +51,7 @@ const Footer = () => {
               href={organizationInfo.contacts.socialMedia.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 text-white"
               aria-label="Facebook"
             >
               <FaFacebookF size={18} />
@@ -60,7 +60,7 @@ const Footer = () => {
               href={organizationInfo.contacts.socialMedia.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#FF0000] hover:border-[#FF0000] transition-all duration-300 text-white"
               aria-label="YouTube"
             >
               <FaYoutube size={18} />
@@ -69,7 +69,7 @@ const Footer = () => {
               href={organizationInfo.contacts.socialMedia.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#E4405F] hover:border-[#E4405F] transition-all duration-300 text-white"
               aria-label="Instagram"
             >
               <FaInstagram size={18} />
@@ -78,7 +78,7 @@ const Footer = () => {
               href={organizationInfo.contacts.socialMedia.x}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300 text-white"
+              className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#000000] hover:border-[#000000] transition-all duration-300 text-white"
               aria-label="X (Twitter)"
             >
               <FaXTwitter size={18} />
@@ -157,10 +157,18 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-4">
                 <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-secondary-light flex-shrink-0">
+                  <FaPhone size={16} />
+                </div>
+                <a href={`tel:${organizationInfo.contacts.phone}`} className="text-gray-400 hover:text-secondary-light transition-colors">
+                  {organizationInfo.contacts.phone}
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-secondary-light flex-shrink-0">
                   <FaEnvelope size={16} />
                 </div>
-                <a href="mailto:info@missionodisha.co.in" className="text-gray-400 hover:text-secondary-light transition-colors">
-                  info@missionodisha.co.in
+                <a href={`mailto:${organizationInfo.contacts.email}`} className="text-gray-400 hover:text-secondary-light transition-colors">
+                  {organizationInfo.contacts.email}
                 </a>
               </div>
             </div>

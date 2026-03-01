@@ -59,6 +59,8 @@ export const organizationInfo = {
         lng: null
       }
     ],
+    phone: "06762-228680",
+    email: "missionorissa@yahoo.co.in",
     socialMedia: {
       facebook: "https://www.facebook.com/profile.php?id=100009801392845",
       youtube: "https://www.youtube.com/@missionwebodisha",

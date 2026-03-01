@@ -78,12 +78,12 @@ const Contact = () => {
                   <div className="p-6 bg-primary rounded-3xl text-white">
                     <FaEnvelope className="text-secondary-light text-2xl mb-4" />
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-1">Email Us</p>
-                    <p className="font-bold text-sm">info@missionodisha.co.in</p>
+                    <a href={`mailto:${organizationInfo.contacts.email}`} className="font-bold text-sm hover:text-secondary-light transition-colors">{organizationInfo.contacts.email}</a>
                   </div>
                   <div className="p-6 bg-accent rounded-3xl text-white">
                     <FaPhone className="text-white/60 text-2xl mb-4" />
                     <p className="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-1">Call Us</p>
-                    <p className="font-bold text-sm">+91-XXXX-XXXXXX</p>
+                    <a href={`tel:${organizationInfo.contacts.phone}`} className="font-bold text-sm hover:text-white/80 transition-colors">{organizationInfo.contacts.phone}</a>
                   </div>
                   <div className="p-6 bg-white rounded-3xl border border-primary/5 flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-2">
