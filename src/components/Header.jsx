@@ -30,9 +30,12 @@ const Header = () => {
               className="h-14 md:h-16 w-auto object-contain"
             />
             <div className="flex flex-col border-l border-primary/10 pl-4 hidden sm:flex">
-              <span className="text-xl md:text-2xl font-heading font-black text-primary tracking-tight leading-none">
-                MISSION
-              </span>
+              <img 
+                src="/images/assets/logo-old.jpg" 
+                alt="MISSION Legacy Logo" 
+                className="h-8 md:h-10 w-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
               <span className="text-[10px] text-accent font-bold uppercase tracking-[0.2em] mt-1">
                 Educate • Uplift • Empower
               </span>

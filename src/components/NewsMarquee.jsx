@@ -17,7 +17,7 @@ const NewsMarquee = () => {
       {/* Fixed Label */}
       <div className="absolute left-0 z-20 bg-accent-dark pl-4 pr-4 md:pr-6 h-full flex items-center gap-2 shadow-[15px_0_25px_-5px_rgba(211,84,0,1)]">
         <FaBullhorn className="text-lg animate-pulse" />
-        <span className="hidden md:block font-bold uppercase tracking-widest text-xs border-r border-white/30 pr-4 whitespace-nowrap">Announcements</span>
+        <span className="hidden md:block font-bold uppercase tracking-widest text-xs border-r border-white/30 pr-4 whitespace-nowrap">What's New</span>
       </div>
       
       {/* Scrolling Content */}

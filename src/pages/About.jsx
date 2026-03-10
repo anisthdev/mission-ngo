@@ -183,7 +183,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex items-center justify-center p-4 h-24 bg-warm-sand rounded-2xl border border-primary/5 hover:border-accent/30 transition-all group grayscale hover:grayscale-0"
+                className="flex items-center justify-center p-4 h-24 bg-warm-sand rounded-2xl border border-primary/5 hover:border-accent/30 transition-all group"
               >
                 <img 
                   src={partner.logo} 
@@ -244,20 +244,13 @@ const About = () => {
                   {reg.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1">
                   <button 
                     onClick={() => !reg.missing && setViewingFile(reg)}
                     disabled={reg.missing}
-                    className={`flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${reg.missing ? 'bg-slate-50 text-slate-300 cursor-not-allowed' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}`}
+                    className={`flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${reg.missing ? 'bg-slate-50 text-slate-300 cursor-not-allowed' : 'bg-primary hover:bg-accent text-white shadow-lg shadow-primary/20 hover:shadow-accent/20'}`}
                   >
-                    <FaEye /> View
-                  </button>
-                  <button 
-                    onClick={() => !reg.missing && handleDownload(reg.file, `${reg.title.replace(/\s+/g, '_')}.pdf`)}
-                    disabled={reg.missing}
-                    className={`flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all shadow-lg ${reg.missing ? 'bg-slate-100 text-slate-300 cursor-not-allowed' : 'bg-primary hover:bg-accent text-white shadow-primary/20 hover:shadow-accent/20'}`}
-                  >
-                    <FaDownload /> Download
+                    <FaEye /> View Document
                   </button>
                 </div>
               </motion.div>
@@ -302,18 +295,12 @@ const About = () => {
                 />
               </div>
 
-              <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-4">
+              <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-end">
                 <button 
                   onClick={() => setViewingFile(null)}
-                  className="px-6 py-2.5 text-slate-500 font-bold uppercase tracking-widest text-xs hover:text-primary transition-colors"
+                  className="px-8 py-3 bg-primary hover:bg-accent text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20"
                 >
-                  Close
-                </button>
-                <button 
-                  onClick={() => handleDownload(viewingFile.file, `${viewingFile.title.replace(/\s+/g, '_')}.pdf`)}
-                  className="flex items-center gap-2 px-8 py-2.5 bg-primary hover:bg-accent text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20"
-                >
-                  <FaDownload /> Download PDF
+                  Close Document
                 </button>
               </div>
             </motion.div>

@@ -422,7 +422,7 @@ const Home = () => {
             <h2 className="text-3xl font-heading font-bold text-primary">Supporting Partners</h2>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 hover:opacity-100 transition-opacity duration-500">
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
             {organizationInfo.partners.slice(0, 12).map((partner, index) => (
               <motion.div
                 key={index}
@@ -430,7 +430,7 @@ const Home = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="h-12 md:h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all"
+                className="h-12 md:h-16 w-auto flex items-center justify-center transition-all"
               >
                 <img 
                   src={partner.logo} 
