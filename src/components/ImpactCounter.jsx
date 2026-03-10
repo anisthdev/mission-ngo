@@ -90,10 +90,13 @@ export const ImpactStats = ({ stats }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-16 gap-x-12">
+        <div className="flex flex-wrap justify-center gap-y-16 gap-x-12 lg:gap-x-20">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-accent mb-4 group-hover:scale-105 transition-transform duration-500 inline-block">
+            <div 
+              key={index} 
+              className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2.5rem)] 2xl:w-[calc(20%-3rem)] text-center group"
+            >
+              <div className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-5xl font-heading font-black text-accent mb-4 group-hover:scale-105 transition-transform duration-500 inline-block">
                 {stat.animated ? (
                   <ImpactCounter
                     end={stat.value}
@@ -103,7 +106,7 @@ export const ImpactStats = ({ stats }) => {
                 ) : (
                   <div className="flex flex-col items-center">
                     {stat.prefix && (
-                      <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-1 leading-none">
+                      <span className="text-xs md:text-sm uppercase tracking-[0.2em] font-bold text-slate-400 mb-1 leading-none">
                         {stat.prefix}
                       </span>
                     )}
@@ -114,7 +117,7 @@ export const ImpactStats = ({ stats }) => {
                   </div>
                 )}
               </div>
-              <div className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-[0.2em] max-w-[150px] mx-auto leading-relaxed">
+              <div className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-[0.2em] max-w-[200px] mx-auto leading-relaxed">
                 {stat.label}
               </div>
             </div>
