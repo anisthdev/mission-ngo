@@ -37,8 +37,7 @@ const About = () => {
       title: "Registered with NITI Aayog",
       number: organizationInfo.registrations.nitiAayogUID,
       description: "Unique ID on NGO Darpan (NITI Aayog) for government collaboration and recognition.",
-      file: "/reports/registration-document.pdf",
-      missing: true
+      file: "/reports/registration-darpan.pdf"
     }
   ];
 
