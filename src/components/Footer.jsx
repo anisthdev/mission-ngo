@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="bg-white p-2 rounded-xl">
               <img 
-                src="/images/assets/logo.jpg" 
+                src="/images/assets/logo.png" 
                 alt="MISSION New Logo" 
                 className="h-16 w-auto object-contain"
               />
@@ -38,10 +38,9 @@ const Footer = () => {
               <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 font-bold">Our Legacy</span>
               <div className="bg-white p-2 rounded-lg">
                 <img 
-                  src="/images/assets/logo-old.jpg" 
+                  src="/images/assets/logo-old.png" 
                   alt="MISSION Old Logo" 
                   className="h-10 w-auto object-contain"
-                  style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
             </div>
