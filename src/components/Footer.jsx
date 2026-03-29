@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaYoutube, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaYoutube, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { organizationInfo } from '../data/organizationData';
 
@@ -188,6 +188,14 @@ const Footer = () => {
             </div>
             <div className="text-[10px] text-gray-500 text-center md:text-right uppercase tracking-[0.2em] font-bold">
               <p>&copy; {currentYear} MISSION. All rights reserved.</p>
+              <a 
+                href="https://lumenapps.in" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="mt-2 normal-case tracking-normal font-medium opacity-60 flex items-center justify-center md:justify-end gap-1 text-[11px] md:text-xs hover:text-secondary-light transition-colors group"
+              >
+                Made with <FaHeart className="text-[10px] group-hover:animate-[heart-beat_0.8s_ease-in-out_infinite] transition-colors" /> by lumenapps
+              </a>
             </div>
           </div>
         </div>
