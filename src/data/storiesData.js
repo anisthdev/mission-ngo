@@ -1,5 +1,29 @@
 export const successStories = [
   {
+    id: 7,
+    slug: "dhenkanal-embraces-the-future",
+    title: "Dhenkanal Embraces the Future",
+    name: "Senior District Officers",
+    location: "Dhenkanal District",
+    category: "Governance and Digital Transformation",
+    story: "A high-level workshop equipped senior district officers with practical AI tools to improve workflow efficiency, data-driven decisions, and public service delivery.",
+    impact: "Operational Excellence Through AI",
+    image: "/images/assets/ai_operational_excellence_1.jpeg",
+    date: "21 May 2026",
+    fullStory: {
+      introduction: "On 20 May 2026, a high-level workshop on AI Tools for Operational Excellence was held at the Sadbhabana Conference Hall in the District Collectorate, Dhenkanal, for senior district-level officers.",
+      challenge: "The session responded to a clear need to bridge traditional bureaucratic workflows with the growing potential of artificial intelligence in public administration.",
+      intervention: "The workshop was organized with the strategic and technological support of the Odisha Computer Application Centre (OCAC) and Odisha Knowledge Corporation Limited (OKCL). Mr S S Rout led the technical sessions and delivered live demonstrations of practical AI tools tailored for governance use cases, showing how they can streamline complex workflows, improve decision-making, and enhance the speed and transparency of public service delivery.",
+      result: "Participating officers engaged in forward-looking discussions on how to adopt these digital tools in their daily work. The event reinforced Dhenkanal's commitment to a more agile, citizen-centric, and future-ready administration.",
+      gallery: [
+        "/images/assets/ai_operational_excellence_1.jpeg",
+        "/images/assets/ai_operational_excellence_2.jpeg",
+        "/images/assets/ai_operational_excellence_3.jpeg",
+        "/images/assets/ai_operational_excellence_4.jpeg"
+      ]
+    }
+  },
+  {
     id: 1,
     slug: "rising-from-the-roots",
     title: "Rising from the Roots",
@@ -142,5 +166,5 @@ export const successStories = [
         "/images/assets/artisan-9.jpg"
       ]
     }
-  }
+  },
 ];
